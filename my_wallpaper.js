@@ -6,7 +6,7 @@ let earSize = 60; //sizes set to scale
 let faceSize = 130; //sizes set to scale
 let eyeSize = 40; //sizes set to scale
 let eyeShadowSize = 20; //sizes set to scale
-let drawBowTie = true; //flag to set bowtie on and off
+let drawBowTie = false; //flag to set bowtie on and off
 let bowTieSize = 20; 
 
 function setup_wallpaper(pWallpaper) {
@@ -59,6 +59,7 @@ function my_symbol() {
   ellipse(60, 55, 50, 50);
   ellipse(140, 55, 50, 50); // Ears 2.0
 
+  stroke(2)
   fill(faceAndEars);
   ellipse(100, 100, faceSize, faceSize); // Base Face
 
@@ -66,6 +67,7 @@ function my_symbol() {
     DrawBowTie(bowTieColour, bowTieSize);
   }
 
+  noStroke();
   fill(eyeColour);
   ellipse(70, 90, eyeSize, eyeSize);
   ellipse(130, 90, eyeSize, eyeSize); // Eyes
@@ -73,7 +75,9 @@ function my_symbol() {
   fill(eyeShadowColour);
   ellipse(80, 90, eyeShadowSize, eyeShadowSize);
   ellipse(140, 90, eyeShadowSize, eyeShadowSize); // Eyes 2.0
-
+  
+  stroke(1);
+  strokeWeight(1);
   ellipse(100, 130, 60, 50);
   
   fill(earColour);
