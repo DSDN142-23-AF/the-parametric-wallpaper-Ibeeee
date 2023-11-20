@@ -6,7 +6,8 @@ let earSize = 60; //sizes set to scale
 let faceSize = 130; //sizes set to scale
 let eyeSize = 40; //sizes set to scale
 let eyeShadowSize = 20; //sizes set to scale
-let drawBowTie = false; //flag to set bowtie on and off
+let drawBowTie = true; //flag to set bowtie on and off
+let bowTieSize = 20; 
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
@@ -25,16 +26,11 @@ function wallpaper_background() {
 
 function my_symbol() {
   var colorPalettes = [
-    "#FAF5CD",
-    "#FACCA5",
-    "#ECBEFA",
-    "#B9E3C3",
-    "#FFC0CB",
-    "#FFD700",
-    "#00CED1",
-    "#DDA0DD",
-    "#87CEEB",
-    "#FFA07A",
+    "#d8e2dc",
+    "#ffe5d9",
+    "#ffcad4",
+    "#f4acb7",
+    "#f7d6e0",
   ];
   var earColour = getRandomUniqueColor(colorPalettes);
   var faceAndEars = getRandomUniqueColor(colorPalettes, [earColour]);
@@ -52,6 +48,8 @@ function my_symbol() {
   ]);
 
   // draw base bear
+  stroke(2)
+  strokeWeight(4);
   fill(faceAndEars);
   ellipse(50, 50, earSize, earSize);
   ellipse(150, 50, earSize, earSize); // Ears
@@ -65,7 +63,7 @@ function my_symbol() {
   ellipse(100, 100, faceSize, faceSize); // Base Face
 
   if (drawBowTie) {
-    DrawBowTie(bowTieColour);
+    DrawBowTie(bowTieColour, bowTieSize);
   }
 
   fill(eyeColour);
@@ -77,18 +75,17 @@ function my_symbol() {
   ellipse(140, 90, eyeShadowSize, eyeShadowSize); // Eyes 2.0
 
   ellipse(100, 130, 60, 50);
-  stroke(1);
   
   fill(earColour);
   ellipse(100, 120, 30, 20);
 }
 
-function DrawBowTie(colour) {
+function DrawBowTie(colour, bSize) {
   fill(colour);
   stroke(1);
-  ellipse(80, 40, 60, 30); // L Side Bow
-  ellipse(120, 40, 60, 30); // R Side Bow
-  ellipse(100, 40, 20, 30); // Middle Bow
+  ellipse(80, 40, 60+bSize, 30+bSize); // L Side Bow
+  ellipse(120, 40, 60+bSize, 30+bSize); // R Side Bow
+  ellipse(100, 40, 20+bSize, 30+bSize); // Middle Bow
 }
 
 function getRandomUniqueColor(colorList, excludeList = []) {
