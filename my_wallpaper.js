@@ -6,8 +6,9 @@ let earSize = 60; //sizes set to scale
 let faceSize = 130; //sizes set to scale
 let eyeSize = 40; //sizes set to scale
 let eyeShadowSize = 20; //sizes set to scale
-let drawBowTie = false; //flag to set bowtie on and off
-let bowTieSize = 10; 
+let drawBowTie = true; //flag to set bowtie on and off
+let drawexclamationmark = false; //flag to set exclamation mark on and off
+let bowTieSize = 10;  //sides set to scale
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
@@ -15,13 +16,14 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.show_guide(true); //set this to false when you're ready to print
 
   // Grid settings
-  pWallpaper.grid_settings.cell_width = 300;
-  pWallpaper.grid_settings.cell_height = 300;
-  pWallpaper.grid_settings.row_offset = 0;
+  pWallpaper.grid_settings.cell_width = 400;
+  pWallpaper.grid_settings.cell_height = 400;
+  pWallpaper.grid_settings.row_offset = 200;
 }
 
 function wallpaper_background() {
   background(255, 248, 255); 
+
 }
 
 function my_symbol() {
@@ -33,6 +35,7 @@ function my_symbol() {
     "#F0DEFD",
   ];
   var earColour = getRandomUniqueColor(colorPalettes);
+  var backGround = getRandomUniqueColor(colorPalettes);
   var faceAndEars = getRandomUniqueColor(colorPalettes, [earColour]);
   var eyeColour = getRandomUniqueColor(colorPalettes, [earColour, faceAndEars]);
   var eyeShadowColour = getRandomUniqueColor(colorPalettes, [
@@ -46,18 +49,28 @@ function my_symbol() {
     eyeColour,
     eyeShadowColour,
   ]);
-
-  rotate(20)
+  
   //wallpaper design
-  stroke(0);
-  strokeWeight(4)
-  fill(250, 119, 119);
-  ellipse(195, 125, 25, 25);
-  triangle(240, 40, 190, 30, 200, 100);
+  noStroke(0);
+  fill(240, 200, 255, 60);
+  ellipse(30, 300, 150, 150);
+
+  fill(165, 200, 255, 100);
+  ellipse(170, 195, 90, 90);
+
+  fill(backGround);
+  ellipse(230, 320, 40, 40);
+
+  fill(backGround);
+  ellipse(330, 10, 100, 100);
+
+  if (drawexclamationmark)  {
+    DrawExclamation();
+  }
 
   // draw base bear
   stroke(77, 45, 82);
-  strokeWeight(4);
+  strokeWeight(5);
   fill(faceAndEars);
   ellipse(50, 50, earSize, earSize);
   ellipse(150, 50, earSize, earSize); // Ears
@@ -103,6 +116,15 @@ function my_symbol() {
   line(155, 127, 147, 114)
   line(165, 127, 157, 114)
 
+}
+
+function DrawExclamation() {
+  noStroke();
+  fill(250, 119, 119);
+  ellipse(210, 70, 20, 20);
+  rect(202, 10, 15, 45, 20);
+  ellipse(250, 70, 20, 20);
+  rect(242, 10, 15, 45, 20); //!! 
 }
 
 function DrawBowTie(colour, bSize) {
