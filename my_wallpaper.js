@@ -1,23 +1,21 @@
 // Parameter variables
-let rectWidth = 20;
-let rectHeight = 20;
-
-let circleSize = 0; //Change Background Circles Size
-let innerearsize = 0; // Change Inner Ear Size
-let earSize = 100; //Change Ear Size
-let faceSize = 200 //Change Face Size
-let eyeSize = 90; //Change Eye Size
-let eyeShadowSize = 40; //Change Inner Eye
-let mouthSize = 20; //Change Mouth Size
+let circleSize = 70; //Change Background Circles Size
+let innerearsize = 60; // Change Inner Ear Size
+let earSize = 10; //Change Ear Size
+let faceSize = 250; //Change Face Size
+let eyeSize = 50; //Change Eye Size
+let eyeShadowSize = 30; //Change Inner Eye
+let mouthSize = 10; //Change Mouth Size
 let noseSize = 10; // Change Nose Size
 let drawBowTie = true; //Bowtie ON and OFF
 let drawexclamationmark = false; //Exclamation mark ON and OFF
-let bowTieSize = 10;  //Change Bowtie Size
-let blushSize = 30;  //Change Blush Size
-let colorListNum = 1; //Change Color Pallet Group
-let rotatebear = false; //Rotate ON and OFF
-let rotatebearnum = 10; //Change Rotate Num
-
+let bowTieSize = 10; //Change Bowtie Size
+let blushSize = 20; //Change Blush Size
+let colorListNum = 1; //Change Color Pallet Group [0,1,2]
+let rotatebearflag = false; //Rotate ON and OFF
+let rotatebearnum = 2; //Change Rotate Num
+let bearOn = true; //flag for bear
+let shapeTypeForWallpaper = "circle";//Change shapes to "circle" or "square"
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
@@ -32,30 +30,33 @@ function setup_wallpaper(pWallpaper) {
 
 function wallpaper_background() {
   background(255, 248, 255); //Background Colour
-
 }
 
 function my_symbol() {
   var colorPalettesList = [
-    
-    ["#FDDFDF", // List 0
-    "#FCF7DE",
-    "#D3EEFF",
-    "#DAFFEE",
-    "#F0DEFD",],
-    
-    ["#EDF1FF", // List 1
-    "#FFEDF8",
-    "#FCD3D3",
-    "#FCEFD3",
-    "#F3FFEE",],
-    
-    ["#FDDFDF", // List 2
-    "#FCF7DE",
-    "#D3EEFF",
-    "#DAFFEE",
-    "#F0DEFD",]
+    [
+      "#FDDFDF", // List 0
+      "#FCF7DE",
+      "#D3EEFF",
+      "#DAFFEE",
+      "#F0DEFD",
+    ],
 
+    [
+      "#EDF1FF", // List 1
+      "#FFEDF8",
+      "#FCD3D3",
+      "#FCEFD3",
+      "#F3FFEE",
+    ],
+
+    [
+      "#FDDFDF", // List 2
+      "#FCF7DE",
+      "#D3EEFF",
+      "#DAFFEE",
+      "#F0DEFD",
+    ],
   ];
   var background_color = [
     "#FFE9FF",
@@ -64,7 +65,11 @@ function my_symbol() {
     "#EAF3EA",
   ];
 
-  var colorPalettes = colorPalettesList[colorListNum];
+  if (colorListNum > 2) { 
+    var colorPalettes = colorPalettesList[0];
+  } else {
+    var colorPalettes = colorPalettesList[colorListNum]; // if else statement because the max num 2.
+  }
   var earColour = getRandomUniqueColor(colorPalettes);
   var faceAndEars = getRandomUniqueColor(colorPalettes, [earColour]);
   var eyeColour = getRandomUniqueColor(colorPalettes, [earColour, faceAndEars]);
@@ -82,35 +87,30 @@ function my_symbol() {
   ]);
 
   //Wallpaper Design
-
-  noStroke(0);
-  fill(240, 200, 255, 90);
-  ellipse(350, 100, 50 + circleSize, 50 + circleSize);
-
-  fill(random(background_color));
-  ellipse(20, 20, 40 + circleSize, 40 + circleSize);
-
-  fill(random(background_color));
-  ellipse(220, 150, 80 + circleSize, 80 + circleSize);
-
-  fill(random(background_color));
-  ellipse(180, 0, 90 + circleSize, 90 + circleSize);
+  DrawWallpaper(background_color, shapeTypeForWallpaper);
 
   if (drawexclamationmark) {
     DrawExclamation();
   }
 
-  // My Bear
+  if (bearOn) {
+    DrawBear(rotatebearflag, earColour, faceAndEars, eyeColour, mouthColour);
+  }
 
+  if (drawBowTie) {
+    if (faceSize >= 200) {
+      DrawBowTie(bowTieColour, bowTieSize, 0);
+    } else {
+      DrawBowTie(bowTieColour, bowTieSize, 40);
+    }
+  }
+}
 
+function DrawBear(rotatebear, earColour, faceAndEars, eyeColour, mouthColour) {
+ 
   if (rotatebear) {
-    rotateBear();
+    rotate(rotatebearnum); // Rotate Bear
   }
-
-  function rotateBear() {
-    rotate(rotatebearnum)
-  }
-  
 
   stroke(77, 45, 82);
   strokeWeight(5);
@@ -127,10 +127,6 @@ function my_symbol() {
   fill(faceAndEars);
   ellipse(100, 100, faceSize, faceSize); // Base Face
 
-  if (drawBowTie) {
-    DrawBowTie(bowTieColour, bowTieSize);
-  }
-
   strokeWeight(3);
   fill(eyeColour);
   ellipse(70, 90, eyeSize, eyeSize);
@@ -142,7 +138,7 @@ function my_symbol() {
 
   stroke(77, 45, 82);
   strokeWeight(3);
-  fill(mouthColour)
+  fill(mouthColour);
   ellipse(100, 130, 60 + mouthSize, 50 + mouthSize); //Mouth
 
   fill(earColour);
@@ -155,12 +151,40 @@ function my_symbol() {
 
   stroke(0);
   line(55, 125, 45, 112);
-  line(44, 127, 35, 115); // L Line Blush 
+  line(44, 127, 35, 115); // L Line Blush
 
-  line(155, 127, 147, 114)
-  line(165, 127, 157, 114) //R Line Blush
+  line(155, 127, 147, 114);
+  line(165, 127, 157, 114); //R Line Blush
+}
 
-} 
+function DrawWallpaper(background_color, shapeType) { // Function to draw wallpaper
+  noStroke(0);
+  if (shapeType.toLowerCase() === "circle") { // Switch to Circles
+    fill(240, 200, 255, 90);
+    ellipse(350, 100, 50 + circleSize, 50 + circleSize);
+
+    fill(random(background_color));
+    ellipse(20, 20, 40 + circleSize, 40 + circleSize);
+
+    fill(random(background_color));
+    ellipse(220, 150, 80 + circleSize, 80 + circleSize);
+
+    fill(random(background_color));
+    ellipse(180, 0, 90 + circleSize, 90 + circleSize); // Switch to Squares
+  } else if (shapeType.toLowerCase() === "square") {
+    fill(240, 200, 255, 90);
+    rect(350, 100, 50 + circleSize, 50 + circleSize);
+
+    fill(random(background_color));
+    rect(20, 20, 40 + circleSize, 40 + circleSize);
+
+    fill(random(background_color));
+    rect(220, 150, 80 + circleSize, 80 + circleSize);
+
+    fill(random(background_color));
+    rect(180, 0, 90 + circleSize, 90 + circleSize);
+  }
+}
 
 function DrawExclamation() {
   noStroke();
@@ -168,17 +192,16 @@ function DrawExclamation() {
   ellipse(210, 70, 20, 20);
   rect(202, 10, 15, 45, 20);
   ellipse(250, 70, 20, 20);
-  rect(242, 10, 15, 45, 20); //!! 
+  rect(242, 10, 15, 45, 20); //!!
 }
 
-function DrawBowTie(colour, bSize) {
+function DrawBowTie(colour, bSize, Y) {
   fill(colour);
   stroke(77, 45, 82);
-  ellipse(80, 40, 60 + bSize, 30 + bSize); // L Side Bow
-  ellipse(120, 40, 60 + bSize, 30 + bSize); // R Side Bow
-  ellipse(100, 40, 20 + bSize, 30 + bSize); // Middle Bow
+  ellipse(80, Y, 60 + bSize, 30 + bSize); // L Side Bow
+  ellipse(120, Y, 60 + bSize, 30 + bSize); // R Side Bow
+  ellipse(100, Y, 20 + bSize, 30 + bSize); // Middle Bow
 }
-
 
 function getRandomUniqueColor(colorList, excludeList = []) {
   let availableColors = colorList.filter(
