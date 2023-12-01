@@ -1,21 +1,21 @@
 // Parameter variables
-let circleSize = 70; //Change Background Circles Size
+let circleSize = 0; //Change Background Circles Size
 let innerearsize = 60; // Change Inner Ear Size
-let earSize = 10; //Change Ear Size
-let faceSize = 250; //Change Face Size
-let eyeSize = 50; //Change Eye Size
-let eyeShadowSize = 30; //Change Inner Eye
-let mouthSize = 10; //Change Mouth Size
-let noseSize = 10; // Change Nose Size
+let earSize = 80; //Change Ear Size
+let faceSize = 150; //Change Face Size
+let eyeSize = 40; //Change Eye Size
+let eyeShadowSize = 20; //Change Inner Eye
+let mouthSize = 0; //Change Mouth Size
+let noseSize = 0; // Change Nose Size
 let drawBowTie = true; //Bowtie ON and OFF
-let drawexclamationmark = false; //Exclamation mark ON and OFF
+let drawexclamationmark = true; //Exclamation mark ON and OFF
 let bowTieSize = 10; //Change Bowtie Size
-let blushSize = 20; //Change Blush Size
-let colorListNum = 1; //Change Color Pallet Group [0,1,2]
-let rotatebearflag = false; //Rotate ON and OFF
+let blushSize = 10; //Change Blush Size
+let colorListNum = 0; //Change Color Pallet Group [0,1,2]
+let rotatebearflag = true; //Rotate ON and OFF
 let rotatebearnum = 2; //Change Rotate Num
 let bearOn = true; //flag for bear
-let shapeTypeForWallpaper = "circle";//Change shapes to "circle" or "square"
+let shapeTypeForWallpaper = "square";//Change shapes to "circle" or "square"
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
@@ -27,7 +27,6 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.grid_settings.cell_height = 200;
   pWallpaper.grid_settings.row_offset = 200;
 }
-
 function wallpaper_background() {
   background(255, 248, 255); //Background Colour
 }
@@ -35,15 +34,7 @@ function wallpaper_background() {
 function my_symbol() {
   var colorPalettesList = [
     [
-      "#FDDFDF", // List 0
-      "#FCF7DE",
-      "#D3EEFF",
-      "#DAFFEE",
-      "#F0DEFD",
-    ],
-
-    [
-      "#EDF1FF", // List 1
+      "#EDF1FF", // List 0
       "#FFEDF8",
       "#FCD3D3",
       "#FCEFD3",
@@ -51,11 +42,19 @@ function my_symbol() {
     ],
 
     [
-      "#FDDFDF", // List 2
-      "#FCF7DE",
-      "#D3EEFF",
-      "#DAFFEE",
-      "#F0DEFD",
+      "#fb6f92", // List 1
+      "#e7c6ff",
+      "#ffd6ff",
+      "#ffe5ec",
+      "#ffb3c6",
+    ],
+
+    [
+      "#ff99c8", // List 2
+      "#fcf6bd",
+      "#d0f4de",
+      "#a9def9",
+      "#e4c1f9",
     ],
   ];
   var background_color = [
