@@ -1,54 +1,296 @@
-You will need to fill out this file for hand in. 
-
-The bellow is just an example, feel free to disregard this documents contents.
-
-
-Your final settings.txt will look something like this when you are finished:
-
 /////////////////////////////////
 
 Wallpaper 1:
 
-//your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
-let paramter1 = 10;
-let paramter2 = true;
-let paramter3 = 50; 
-let paramter4 = 0; 
-let paramter5 = 60;
+let circleSize = 0; //Change Background Circles Size
+let innerearsize = 60; // Change Inner Ear Size
+let earSize = 80; //Change Ear Size
+let faceSize = 150; //Change Face Size
+let eyeSize = 40; //Change Eye Size
+let eyeShadowSize = 20; //Change Inner Eye
+let mouthSize = 0; //Change Mouth Size
+let noseSize = 0; // Change Nose Size
+let drawBowTie = true; //Bowtie ON and OFF
+let drawexclamationmark = true; //Exclamation mark ON and OFF
+let bowTieSize = 10; //Change Bowtie Size
+let blushSize = 10; //Change Blush Size
+let colorListNum = 0; //Change Color Pallet Group [0,1,2]
+let rotatebearflag = true; //Rotate ON and OFF
+let rotatebearnum = 2; //Change Rotate Num
+let bearOn = true; //flag for bear
+let shapeTypeForWallpaper = "circle";//Change shapes to "circle" or "square"
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
   pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
-  //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 50;
+  // Grid settings
+  pWallpaper.grid_settings.cell_width = 400;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 200;
 }
 
 /////////////////////////////////
 
 Wallpaper 2:
 
-//your parameter variables go here!
-let rect_width  = 10;
-let rect_height = 10;
-let paramter1 = 20;
-let paramter2 = false;
-let paramter3 = 50; 
-let paramter4 = 80; 
-let paramter5 = 30;
+let circleSize = 70; //Change Background Circles Size
+let innerearsize = 60; // Change Inner Ear Size
+let earSize = 10; //Change Ear Size
+let faceSize = 250; //Change Face Size
+let eyeSize = 50; //Change Eye Size
+let eyeShadowSize = 30; //Change Inner Eye
+let mouthSize = 10; //Change Mouth Size
+let noseSize = 10; // Change Nose Size
+let drawBowTie = true; //Bowtie ON and OFF
+let drawexclamationmark = false; //Exclamation mark ON and OFF
+let bowTieSize = 10; //Change Bowtie Size
+let blushSize = 20; //Change Blush Size
+let colorListNum = 0; //Change Color Pallet Group [0,1,2]
+let rotatebearflag = false; //Rotate ON and OFF
+let rotatebearnum = 2; //Change Rotate Num
+let bearOn = true; //flag for bear
+let shapeTypeForWallpaper = "circle";//Change shapes to "circle" or "square"
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
   pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
-  //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 0;
+  // Grid settings
+  pWallpaper.grid_settings.cell_width = 400;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 200;
+}
+
+/////////////////////////////////
+
+Wallpaper 3:
+
+let circleSize = 0; //Change Background Circles Size
+let innerearsize = 60; // Change Inner Ear Size
+let earSize = 80; //Change Ear Size
+let faceSize = 150; //Change Face Size
+let eyeSize = 40; //Change Eye Size
+let eyeShadowSize = 20; //Change Inner Eye
+let mouthSize = 0; //Change Mouth Size
+let noseSize = 0; // Change Nose Size
+let drawBowTie = true; //Bowtie ON and OFF
+let drawexclamationmark = true; //Exclamation mark ON and OFF
+let bowTieSize = 10; //Change Bowtie Size
+let blushSize = 10; //Change Blush Size
+let colorListNum = 0; //Change Color Pallet Group [0,1,2]
+let rotatebearflag = true; //Rotate ON and OFF
+let rotatebearnum = 2; //Change Rotate Num
+let bearOn = false; //flag for bear
+let shapeTypeForWallpaper = "square";//Change shapes to "circle" or "square"
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  // Grid settings
+  pWallpaper.grid_settings.cell_width = 400;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 200;
+}
+
+/////////////////////////////////
+
+Wallpaper 4:
+
+let circleSize = 0; //Change Background Circles Size
+let innerearsize = 60; // Change Inner Ear Size
+let earSize = 200; //Change Ear Size
+let faceSize = 250; //Change Face Size
+let eyeSize = 40; //Change Eye Size
+let eyeShadowSize = 20; //Change Inner Eye
+let mouthSize = 0; //Change Mouth Size
+let noseSize = 0; // Change Nose Size
+let drawBowTie = true; //Bowtie ON and OFF
+let drawexclamationmark = true; //Exclamation mark ON and OFF
+let bowTieSize = 10; //Change Bowtie Size
+let blushSize = 10; //Change Blush Size
+let colorListNum = 0; //Change Color Pallet Group [0,1,2]
+let rotatebearflag = true; //Rotate ON and OFF
+let rotatebearnum = 20; //Change Rotate Num
+let bearOn = true; //flag for bear
+let shapeTypeForWallpaper = "circle";//Change shapes to "circle" or "square"
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  // Grid settings
+  pWallpaper.grid_settings.cell_width = 400;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 200;
+}
+
+/////////////////////////////////
+
+Wallpaper 5:
+
+let circleSize = 0; //Change Background Circles Size
+let innerearsize = 0; // Change Inner Ear Size
+let earSize = 350; //Change Ear Size
+let faceSize = 250; //Change Face Size
+let eyeSize = 40; //Change Eye Size
+let eyeShadowSize = 20; //Change Inner Eye
+let mouthSize = 0; //Change Mouth Size
+let noseSize = 0; // Change Nose Size
+let drawBowTie = false; //Bowtie ON and OFF
+let drawexclamationmark = false; //Exclamation mark ON and OFF
+let bowTieSize = 10; //Change Bowtie Size
+let blushSize = 10; //Change Blush Size
+let colorListNum = 1; //Change Color Pallet Group [0,1,2]
+let rotatebearflag = false; //Rotate ON and OFF
+let rotatebearnum = 0; //Change Rotate Num
+let bearOn = true; //flag for bear
+let shapeTypeForWallpaper = "circle";//Change shapes to "circle" or "square"
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  // Grid settings
+  pWallpaper.grid_settings.cell_width = 400;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 200;
+}
+
+/////////////////////////////////
+
+Wallpaper 6:
+
+let circleSize = 100; //Change Background Circles Size
+let innerearsize = 60; // Change Inner Ear Size
+let earSize = 155; //Change Ear Size
+let faceSize = 150; //Change Face Size
+let eyeSize = 60; //Change Eye Size
+let eyeShadowSize = 50; //Change Inner Eye
+let mouthSize = 20; //Change Mouth Size
+let noseSize = 0; // Change Nose Size
+let drawBowTie = true; //Bowtie ON and OFF
+let drawexclamationmark = true; //Exclamation mark ON and OFF
+let bowTieSize = 10; //Change Bowtie Size
+let blushSize = 10; //Change Blush Size
+let colorListNum = 2; //Change Color Pallet Group [0,1,2]
+let rotatebearflag = true; //Rotate ON and OFF
+let rotatebearnum = 2; //Change Rotate Num
+let bearOn = true; //flag for bear
+let shapeTypeForWallpaper = "square";//Change shapes to "circle" or "square"
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  // Grid settings
+  pWallpaper.grid_settings.cell_width = 400;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 200;
+}
+
+/////////////////////////////////
+
+Wallpaper 7:
+
+let circleSize = 100; //Change Background Circles Size
+let innerearsize = 60; // Change Inner Ear Size
+let earSize = 155; //Change Ear Size
+let faceSize = 250; //Change Face Size
+let eyeSize = 60; //Change Eye Size
+let eyeShadowSize = 50; //Change Inner Eye
+let mouthSize = 20; //Change Mouth Size
+let noseSize = 20; // Change Nose Size
+let drawBowTie = false; //Bowtie ON and OFF
+let drawexclamationmark = true; //Exclamation mark ON and OFF
+let bowTieSize = 10; //Change Bowtie Size
+let blushSize = 10; //Change Blush Size
+let colorListNum = 2; //Change Color Pallet Group [0,1,2]
+let rotatebearflag = true; //Rotate ON and OFF
+let rotatebearnum = 60; //Change Rotate Num
+let bearOn = true; //flag for bear
+let shapeTypeForWallpaper = "square";//Change shapes to "circle" or "square"
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false);
+ 
+  // Grid settings
+  pWallpaper.grid_settings.cell_width = 400;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 200;
+}
+
+/////////////////////////////////
+
+Wallpaper 8:
+
+let circleSize = 10; //Change Background Circles Size
+let innerearsize = 60; // Change Inner Ear Size
+let earSize = 155; //Change Ear Size
+let faceSize = 250; //Change Face Size
+let eyeSize = 60; //Change Eye Size
+let eyeShadowSize = 10; //Change Inner Eye
+let mouthSize = 0; //Change Mouth Size
+let noseSize = 0; // Change Nose Size
+let drawBowTie = true; //Bowtie ON and OFF
+let drawexclamationmark = true; //Exclamation mark ON and OFF
+let bowTieSize = 10; //Change Bowtie Size
+let blushSize = 30; //Change Blush Size
+let colorListNum = 0; //Change Color Pallet Group [0,1,2]
+let rotatebearflag = true; //Rotate ON and OFF
+let rotatebearnum = 15; //Change Rotate Num
+let bearOn = true; //flag for bear
+let shapeTypeForWallpaper = "circle";//Change shapes to "circle" or "square"
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false);
+
+  // Grid settings
+  pWallpaper.grid_settings.cell_width = 400;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 200;
+}
+
+/////////////////////////////////
+
+Wallpaper 9:
+
+let circleSize = 0; //Change Background Circles Size
+let innerearsize = 300; // Change Inner Ear Size
+let earSize = 550; //Change Ear Size
+let faceSize = 300; //Change Face Size
+let eyeSize = 400; //Change Eye Size
+let eyeShadowSize = 250; //Change Inner Eye
+let mouthSize = 0; //Change Mouth Size
+let noseSize = 0; // Change Nose Size
+let drawBowTie = false; //Bowtie ON and OFF
+let drawexclamationmark = true; //Exclamation mark ON and OFF
+let bowTieSize = 10; //Change Bowtie Size
+let blushSize = 10; //Change Blush Size
+let colorListNum = 0; //Change Color Pallet Group [0,1,2]
+let rotatebearflag = true; //Rotate ON and OFF
+let rotatebearnum = 2; //Change Rotate Num
+let bearOn = true; //flag for bear
+let shapeTypeForWallpaper = "circle";//Change shapes to "circle" or "square"
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  // Grid settings
+  pWallpaper.grid_settings.cell_width = 400;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 200;
 }
